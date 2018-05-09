@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">sstest</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Placeholder yet</string>
+    <string name="profile_bar">Профиль</string>
+    <string name="map_bar">Карта</string>
+    <string name="logout_bar">Выйти из профиля</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="hint_enter_a_message">""</string>
+    <string name="phone">Телефон</string>
+    <string name="name">Имя</string>
+    <string name="saveButton">Cохранить</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "764865477226",
+    "firebase_url": "https://sstestproject-b4748.firebaseio.com",
+    "project_id": "sstestproject-b4748",
+    "storage_bucket": "sstestproject-b4748.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764865477226:android:f4493fa1a92fc79e",
+        "android_client_info": {
+          "package_name": "ru.leberamai.sstest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764865477226-gkahcp4l56au8eohonlaquusmag9hc5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8UmI40izddIhb3X3HKrnYQp3cjRAnbE8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
