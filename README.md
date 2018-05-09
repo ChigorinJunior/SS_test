@@ -1,2 +1,0 @@
-# sstest
-# SS_test
