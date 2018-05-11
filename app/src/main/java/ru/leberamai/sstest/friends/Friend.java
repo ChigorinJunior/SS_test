@@ -2,6 +2,7 @@ package ru.leberamai.sstest.friends;
 
 public class Friend {
 
+    // поля должны быть приватными
     String date;
     String message;
     String name;

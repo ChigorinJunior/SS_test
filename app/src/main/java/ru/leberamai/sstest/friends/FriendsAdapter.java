@@ -17,6 +17,7 @@ import ru.leberamai.sstest.chat.MessagesListActivity;
 
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder> {
 
+    // friends
     private List<Friend> friend;
 
     public FriendsAdapter(List<Friend> friend) {
@@ -63,6 +64,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendsV
 
         @Override
         public void onClick(View view) {
+            // это лучше делать не в адаптере, а передавать во вне
             final Context c = view.getContext();
             Intent intent = new Intent(c, MessagesListActivity.class);
             c.startActivity(intent);

@@ -53,6 +53,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // по java code conventions так условия писать не стоит
+        // русские слова вынести в ресурсы
+        // слишком много действий оnClickListener'e
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +92,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 String email = emailtxt.getText().toString();
                 String password = passwordtxt.getText().toString();
 
+                // много дублирующегося кода с логином
                 if(!isValidEmail(email)) emailLayout.setError("Неправильно введен email");
                 else if(!isValidPassword(password)) passwordLayout.setError("Пароль должен содержать больше 7 символов");
                 else {
@@ -125,20 +129,24 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
+    // скобки нужно расставлять единообразно
     public void updateUI(FirebaseUser user)
     {
         if(user != null) {
+            // достаточно просто this
             Context context = RegistrationActivity.this;
             Intent intent = new Intent(context, MainActivity.class);
             context.startActivity(intent);
         }
     }
 
+    // достаточно просто email.length() > 3
     public boolean isValidEmail(String email){
         if(email.length()>3) return true;
         return false;
     }
 
+    // здесь тоже
     public boolean isValidPassword(String password){
         if(password.length()>7) return true;
         return false;

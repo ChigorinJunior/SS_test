@@ -29,9 +29,12 @@ public class MessagesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messages_list);
 
+        // вместо findViewById можно также использовать ButterKnife
         this.messagesList = findViewById(R.id.messagesList);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
+
+        // user.getUid() может вернуть NullPointerException
         final MessagesListAdapter<Message> adapter = new MessagesListAdapter<>(user.getUid(), null);
         messagesList.setAdapter(adapter);
 
@@ -44,7 +47,7 @@ public class MessagesListActivity extends AppCompatActivity {
 
             @Override
             public void onError(Throwable error) {
-
+                // ошибку хорошо бы обработать
             }
         });
 

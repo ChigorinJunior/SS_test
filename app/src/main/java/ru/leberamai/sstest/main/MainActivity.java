@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // каст не нужен
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -77,8 +78,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         UpdateList();
 
+        // скобка как-то не так выровнена
         }
 
+        // методы должны писаться с маленькой буквы
         private void UpdateList(){
 
             reference.addChildEventListener(new ChildEventListener() {
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    // дублирование кода с методом выше
                     result.add(dataSnapshot.getValue(Friend.class));
                     friendsAdapter.notifyDataSetChanged();
                 }
@@ -135,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // сгенерированные комментарии не нужно оставлять
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -147,12 +152,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
+    // здесь нет такого предупреждения, подавлять его не нужно
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
 
+        // лучше написать switch, а однотипный код вынести в метод
         if (id == R.id.profile_bar) {
             Context context = MainActivity.this;
             Intent intent = new Intent(context, ProfileActivity.class);

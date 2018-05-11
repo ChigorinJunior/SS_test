@@ -105,6 +105,7 @@ public class ProfileActivity extends AppCompatActivity {
                     String name = nameEditText.getText().toString();
                     String number = numberEditText.getText().toString();
 
+                    // ошибки лучше показывать все сразу, а не поочереди
                     if (!isValidEmail(email)){
                         emailLayout.setError("Некорректно введен Email");
                     }

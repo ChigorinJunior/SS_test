@@ -63,6 +63,7 @@ public class MessagesRepository {
         messagesRef.child(id).setValue(msg);
     }
 
+    // метод называется toMessageList, но возвращает только одни объект
     private Message toMessageList(DataSnapshot dataSnapshot) {
         Message message = dataSnapshot.getValue(Message.class);
         return message;

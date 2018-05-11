@@ -41,7 +41,9 @@ import ru.leberamai.sstest.profile.User;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    // префикс m только у этой переменной
     private GoogleMap mMap;
+    // это же одинаковые константы, но одна почему-то в шестнадцатеричном формате
     private static final int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 1;
     private static final int REQUEST_CHECK_SETTINGS = 0x1;
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -130,7 +132,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void displayFriendsPosition() {
-
+        // это тоже нужно спрятать в репозиторий
         FirebaseDatabase.getInstance().getReference("users")
                 .addChildEventListener(new ChildEventListener() {
                     @Override
@@ -140,6 +142,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if(dataSnapshot.child("latitude").exists() && dataSnapshot.child("longitude").exists()) {
                             if(!key.equals(firebaseUser.getUid())) {
                                 User user = dataSnapshot.getValue(User.class);
+                                // переменные нужно называть осмысленно
+                                // IDE очень хорошо подсказывает названия
                                 LatLng u = new LatLng(user.getLatitude(), user.getLongitude());
 
                                 MarkerOptions a = new MarkerOptions()
@@ -188,6 +192,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private LocationRequest createLocationRequest() {
         LocationRequest locationRequest = new LocationRequest();
+        // нужно убрать в константы и дать осмысленные названия
         locationRequest.setInterval(5000);
         locationRequest.setFastestInterval(1000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -201,6 +206,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SettingsClient client = LocationServices.getSettingsClient(this);
         Task<LocationSettingsResponse> task = client.checkLocationSettings(builder.build());
 
+        // зачем это закомментированное многоточие?
         //...
         task.addOnSuccessListener(this, new OnSuccessListener<LocationSettingsResponse>() {
             @Override
@@ -217,7 +223,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         resolvable.startResolutionForResult(MapsActivity.this,
                                 REQUEST_CHECK_SETTINGS);
                     } catch (IntentSender.SendIntentException sendEx) {
-
+                        // ошибку нужно обработать
                     }
                 }
             }
@@ -228,7 +234,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CHECK_SETTINGS && resultCode == RESULT_OK) {
-
+            // тут ничего не нужно?
         }
     }
 

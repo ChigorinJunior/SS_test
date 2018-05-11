@@ -1,6 +1,7 @@
 package ru.leberamai.sstest.profile;
 
 public class User {
+    // phoneNumber, а то непонятно, что номер
     private String number;
     private String name;
     private String email;
@@ -9,6 +10,7 @@ public class User {
 
     public User() { }
 
+    // очень странные 2 конструктора, в которых поля присваиваются сами себе
     public User(String name, String number, String email) {
         this.name = name;
         this.number = number;
